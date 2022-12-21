@@ -34,7 +34,7 @@ while True:
         y3 = np.interp(y1, (frameRate, camHeight - frameRate), (0, screenHeight))
         clocX = plocX + (x3 - plocX) / smoothening
         clocY = plocY + (y3 - plocY) / smoothening
-        autopy.mouse.move(camWidth - clocX, clocY)
+        autopy.mouse.move(abs(camWidth - clocX), clocY)
         cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
         plocX, plocY = clocX, clocY
 
